@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import { PlantImage, CowImage } from '../assets/'
 
@@ -31,16 +30,3 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
-
-=======
-import React from 'react'
-const ProductCard = ({ id, nome, imagem, preco, vegano }) => {
- 
-  const formatPrice = (priceInCents) => {
-    return (priceInCents / 100).toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    })
-  }
-}
->>>>>>> 8a8c4b4e410ac4d10a694362e1a6b01e48251d64
