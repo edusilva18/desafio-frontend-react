@@ -5,6 +5,9 @@ import plusImage  from '../assets/Plus.svg'
 import minusImage  from '../assets/Minus.svg'
 import '../css/cart.css'
 
+import React, { useState } from 'react';
+import { PlantImage, CowImage, deleteImage, plusImage, minusImage } from '../assets';
+
 export function Cart() {
   return (
     <div className="cart">
