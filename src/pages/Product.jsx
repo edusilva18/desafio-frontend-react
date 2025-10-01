@@ -3,6 +3,10 @@ import MinusImage from '../assets/Minus.svg'
 import PlusImage from '../assets/Plus.svg'
 import '../css/Product.css'
 
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { PlantImage, CowImage } from '../assets';
+
 export function Product() {
   return (
     <>
