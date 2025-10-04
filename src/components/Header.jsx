@@ -2,6 +2,10 @@ import logoImage from '../assets/logo.svg'
 import ToteImage from '../assets/Tote.svg'
 import { Cart } from './Cart'
 
+import dados from '../dados';
+console.log( 'message ; dados.produtos' );
+
+
 export function Header() {
   return (
     <header className="header">
