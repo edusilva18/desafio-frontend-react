@@ -327,3 +327,16 @@
   padding: 8px;
   display: flex;
 }
+ .cart {
+  transform: translateX(110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 240ms ease, opacity 240ms ease;
+  z-index: 60;
+}
+
+.cart.cart--open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
