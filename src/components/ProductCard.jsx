@@ -30,3 +30,62 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+const [carrinho, setCarrinho] = useState([]);
+ const removerDoCarrinho = (idItem) => {
+  setCarrinho(prev => prev.filter(item => item.id !== idItem));
+};
+const calcularTotal = () => {
+  return carrinho.reduce((total, item) => total + item.preco * item.quantidade, 0);
+};
+function Carrinho({ carrinho, removerDoCarrinho }) {
+  return (
+    <div className="carrinho">
+      <h2>Carrinho</h2>
+      {carrinho.length === 0 ? (
+        <p>Seu carrinho está vazio.</p>
+      ) : (
+        <ul>
+          {carrinho.map(item => (
+            <li key={item.id}>
+              <strong>{item.nome}</strong> — {item.quantidade}x R$ {(item.preco / 100).toFixed(2)}
+              {item.observacao && <p>Obs: {item.observacao}</p>}
+              <button onClick={() => removerDoCarrinho(item.id)}>Remover</button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <h3>Total: R$ {(calcularTotal() / 100).toFixed(2)}</h3>
+    </div>
+  );
+}
+function Carrinho({ carrinho, removerDoCarrinho }) {
+  return (
+    <div className="carrinho">
+      <h2>Carrinho</h2>
+      {carrinho.length === 0 ? (
+        <p>Seu carrinho está vazio.</p>
+      ) : (
+        <ul>
+          {carrinho.map(item => (
+            <li key={item.id}>
+              <strong>{item.nome}</strong> — {item.quantidade}x R$ {(item.preco / 100).toFixed(2)}
+              {item.observacao && <p>Obs: {item.observacao}</p>}
+              <button onClick={() => removerDoCarrinho(item.id)}>Remover</button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <h3>Total: R$ {(calcularTotal() / 100).toFixed(2)}</h3>
+    </div>
+  );
+}
+<Carrinho
+  carrinho={carrinho}
+  removerDoCarrinho={removerDoCarrinho}
+/>
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import Produto from '../components/ProductCard';
+ const [mostrarCarrinho, setMostrarCarrinho] = useState(false);
+
+ 
