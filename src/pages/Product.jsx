@@ -54,3 +54,48 @@ export function Product() {
     </>
   )
 }
+import { useState } from "react";
+
+function Produto({ produto, adicionarAoCarrinho }) {
+  const [quantidade, setQuantidade] = useState(1);
+  const [observacao, setObservacao] = useState("");
+
+  const handleQuantidadeChange = (e) => {
+    const valor = parseInt(e.target.value);
+    setQuantidade(valor >= 1 ? valor : 1);
+  };
+
+  return (
+    <div className="produto-card">
+      <img src={produto.imagem} alt={produto.nome} />
+      <h3>{produto.nome}</h3>
+      <p>Preço: R$ {(produto.preco / 100).toFixed(2)}</p>
+
+      <label>
+        Quantidade:
+        <input
+          type="number"
+          value={quantidade}
+          onChange={handleQuantidadeChange}
+          min={1}
+        />
+      </label>
+
+      <label>
+        Observações:
+        <input
+          type="text"
+          placeholder="Observações"
+          value={observacao}
+          onChange={(e) => setObservacao(e.target.value)}
+        />
+      </label>
+
+      <button onClick={() => adicionarAoCarrinho(produto, quantidade, observacao)}>
+        Comprar
+      </button>
+    </div>
+  );
+}
+
+export default Produto;
