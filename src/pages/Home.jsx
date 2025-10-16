@@ -3,8 +3,30 @@
  import { useState } from 'react';
 import dados from '../dados';
 
+ const [quantidade, setQuantidade] = useState(1);
+
+const handleQuantidadeChange = (e) => {
+  const valor = parseInt(e.target.value);
+  setQuantidade(valor >= 1 ? valor : 1);
+};
+<input
+  type="number"
+  value={quantidade}
+  onChange={handleQuantidadeChange}
+  min={1}
+/>
+const [observacao, setObservacao] = useState("");
+
+ <input
+  type="text"
+  placeholder="Observações"
+  value={observacao}
+  onChange={(e) => setObservacao(e.target.value)}
+/>
  
 
+
+ 
 function Home() {
   const [produtos, setProdutos] = useState([
     {
@@ -170,3 +192,14 @@ export function Home() {
     </>
   )
 }
+const [mostrarCarrinho, setMostrarCarrinho] = useState(false);
+
+<button onClick={() => setMostrarCarrinho(true)}>🛒</button>
+
+{mostrarCarrinho && (
+  <Cart
+    carrinho={carrinho}
+    setCarrinho={setCarrinho}
+    fecharCarrinho={() => setMostrarCarrinho(false)}
+  />
+)}
