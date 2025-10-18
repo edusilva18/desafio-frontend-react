@@ -1,4 +1,4 @@
-import {PlantImage} from '../assets/Plant.png'
+import PlantImage from '../assets/Plant.png'
 import CowImage from '../assets/Cow.png'
 
 
@@ -6,13 +6,13 @@ const ProductCard = ({
         id,
         imagem,
         nome,
-        price: { por: currentPrice, de: oldPrice },
+        preco: { por: currentPrice, de: oldPrice },
         vegano
     }) => {
 
 
-    const formatPrice = (price) => {
-        return `R$ ${price.toFixed(2).replace('.', ',')}`;
+    const formatPrice = (preco) => {
+        return `R$ ${preco.toFixed(2).replace('.', ',')}`;
     }
 
     const tag = vegano ? {image: PlantImage, text: 'Vegano'} : {image: CowImage, text: 'Contém Lactose'}
