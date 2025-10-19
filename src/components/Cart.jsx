@@ -4,6 +4,9 @@ import plantImage from '../assets/Plant.png'
 import plusImage  from '../assets/Plus.svg'
 import minusImage  from '../assets/Minus.svg'
 import '../css/cart.css'
+import { useState } from 'react'
+import { carrinho } from '../../data'
+
 
 export function Cart() {
   return (

@@ -2,8 +2,11 @@ import PlantImage from '../assets/Plant.png'
 import MinusImage from '../assets/Minus.svg'
 import PlusImage from '../assets/Plus.svg'
 import '../css/Product.css'
+import { produtos } from '../../data'
+
 
 export function Product() {
+  
   return (
     <>
       <main>
