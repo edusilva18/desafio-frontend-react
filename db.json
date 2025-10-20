@@ -177,4 +177,21 @@
       "observacao": ""
     }
   ]
-}
+
+
+  ,"detalhesProduto": [
+  {
+    "id": 1,
+    "nome": "Café Espresso",
+    "descricao": "Sabor intenso e encorpado.",
+    "preco": 1299,
+    "imagem": "espresso.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Café Latte",
+    "descricao": "Mistura suave com leite.",
+    "preco": 1499,
+    "imagem": "latte.jpg"
+  }
+]}
