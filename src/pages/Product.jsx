@@ -4,9 +4,18 @@ import PlusImage from '../assets/Plus.svg'
 import '../css/Product.css'
 import { produtos } from '../../data'
 
+ 
+ import { useParams } from 'react-router-dom';
+
+export default function Product() {
+  const { id } = useParams();
+  return <h1>Detalhes do produto {id}</h1>;}
 
 export function Product() {
-  
+ 
+
+ 
+
   return (
     <>
       <main>
